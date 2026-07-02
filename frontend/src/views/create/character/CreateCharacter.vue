@@ -9,8 +9,8 @@ import api from "@/js/http/api.js";
 import {useRouter} from "vue-router";
 import {useUserStore} from "@/stores/user.js";
 
-const user = useUserStore() //个人主页的id
-const router = useRouter() //打开个人主页
+const user = useUserStore()
+const router = useRouter()
 
 const photoRef = useTemplateRef('photo-ref')
 const nameRef = useTemplateRef('name-ref')
@@ -54,7 +54,6 @@ async function handleCreate() {
         errorMessage.value = data.result
       }
     } catch (err) {
-      console.log(err)
     }
   }
 }
@@ -65,10 +64,10 @@ async function handleCreate() {
     <div class="card w-120 bg-base-200 shadow-sm mt-16">
       <div class="card-body">
         <h3 class="text-lg font-bold my-4">创建角色</h3>
-        <Photo ref="photo-ref" />
-        <Name ref="name-ref" />
-        <Profile ref="profile-ref" />
-        <BackgroundImage ref="background-image-ref" />
+        <Photo ref="photo-ref"/>
+        <Name ref="name-ref"/>
+        <Profile ref="profile-ref"/>
+        <BackgroundImage ref="background-image-ref"/>
 
         <p v-if="errorMessage" class="text-sm text-red-500">{{ errorMessage }}</p>
 
